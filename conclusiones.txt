@@ -1,0 +1,24 @@
+📄 CONCLUSIONES
+Realicé una prueba de carga al endpoint de autenticación https://fakestoreapi.com/auth/login utilizando la herramienta K6, siguiendo los criterios técnicos definidos en el ejercicio. 
+El objetivo era evaluar el comportamiento del servicio bajo una carga moderada y validar su estabilidad.
+
+🔍 Hallazgos principales
+
+- Utilicé un conjunto de credenciales válidas proporcionadas por la API pública, incluyendo el usuario mor_2314.
+
+- Durante la ejecución, se realizaron 149 peticiones en 10 segundos, alcanzando una tasa de 13.17 transacciones por segundo (TPS).
+  
+- El tiempo de respuesta promedio fue de 409 ms, y el percentil 95 se ubicó en 676 ms, cumpliendo con el umbral de 1.5 segundos establecido para la prueba.
+
+- La tasa de error fue de 0%, lo que está dentro del límite aceptable de menos del 3%.
+
+- Todas las respuestas del servidor incluyeron un token de autenticación válido, lo que confirma que el login fue exitoso en cada iteración.
+
+⚠️ Observación técnica relevante
+Al principio, configuré el script para validar respuestas con código HTTP 200, asumiendo que ese sería el indicador de éxito. 
+Sin embargo, durante la ejecución observé que el servidor responde con HTTP 201 (Created) cuando el login es exitoso. 
+Ajusté el script para aceptar este código como válido, lo que permitió que las validaciones reflejaran correctamente el comportamiento real del servicio.
+
+✅ Conclusión general
+Con base en los resultados obtenidos, puedo concluir que el servicio de login responde de forma estable, confiable y eficiente ante múltiples solicitudes concurrentes. 
+La infraestructura manejó la carga sin errores y con tiempos de respuesta óptimos, lo que demuestra que está bien preparada para escenarios de uso moderado.
