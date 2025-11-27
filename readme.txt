@@ -54,6 +54,3 @@ NOTAS IMPORTANTES:
 - El endpoint probado fue: https://fakestoreapi.com/auth/login
 - El servidor responde con código HTTP 201 (Created) en lugar de 200, lo cual fue ajustado en el script para validar correctamente las respuestas exitosas.
 
-AUTOR:
-Esta prueba fue desarrollada como parte de un ejercicio técnico personal. 
-Todos los scripts y archivos están disponibles públicamente para su revisión y reproducción.
